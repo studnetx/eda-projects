@@ -19,7 +19,6 @@ ax.set_title("Common Bill Range")
 plt.show()
 
 # total_bill  of lunch vs dinner
-
 fig , ax= plt.subplots(ncols=2,nrows=1)
 # dinner Time 
 dinnerdf=df[df['time']=='Dinner']
