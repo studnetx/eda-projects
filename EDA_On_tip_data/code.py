@@ -28,3 +28,16 @@ ax[1].hist(Lunchdf['total_bill'],bins=30,color='skyblue', edgecolor='black', alp
 plt.title("Distibution of Bills by Dinner and Lunch")
 plt.savefig('../pictures/bill_at_dinner_lunch.png')
 plt.show()
+# Avg Tip by Day
+grouped=df.groupby('day',observed=False)['tip']
+tip_mean=grouped.mean()
+tip_std=grouped.std()
+tip_len=grouped.count()
+tip_day=grouped.mean().index
+sem=tip_std/np.sqrt(tip_len)
+plt.bar(tip_day,tip_mean,yerr=sem,capsize=5)
+plt.xlabel('Day')
+plt.ylabel('Average Tip ($)')
+plt.title('Average Tip by Day with Standard Error')
+plt.savefig('../pictures/Average_tip_by_day.png')
+plt.show()
