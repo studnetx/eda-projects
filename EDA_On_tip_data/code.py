@@ -7,7 +7,7 @@ import seaborn as sns
 df=sns.load_dataset("tips")
 
 
-# Distribution of total bills
+# Distribution  of total bills
 # What is the most common total bill range?
 # How does the distribution differ between lunch and dinner?
 
