@@ -41,3 +41,16 @@ plt.ylabel('Average Tip ($)')
 plt.title('Average Tip by Day with Standard Error')
 plt.savefig('../pictures/Average_tip_by_day.png')
 plt.show()
+# Tips 
+df["percentage_tip"]=(df['tip']/df['total_bill'])*100
+grouped=df.groupby('size')['percentage_tip'].agg(['mean','std','count'])
+grouped['sem']=grouped['std']/np.sqrt(grouped['count'])
+grouped
+fig ,ax=plt.subplots()
+ax.errorbar(grouped.index , grouped['mean'],yerr=grouped['sem'],marker='o', capsize=5, linestyle='-', color='blue')
+ax.set_xlabel('Party Size')
+ax.set_ylabel('Average Tip Percentage (%)')
+ax.set_title('Tip Percentage by Party Size')
+ax.grid(True, linestyle=':', alpha=0.7)
+plt.savefig('../graphs/tip_per_by_party_size.png')
+plt.show()
