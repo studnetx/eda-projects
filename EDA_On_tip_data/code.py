@@ -54,3 +54,17 @@ ax.set_title('Tip Percentage by Party Size')
 ax.grid(True, linestyle=':', alpha=0.7)
 plt.savefig('../graphs/tip_per_by_party_size.png')
 plt.show()
+
+# Tip distribution by time of day
+fig ,ax=plt.subplots()
+data_to_plot = [df[df['time'] == 'Lunch']['tip'],
+                df[df['time'] == 'Dinner']['tip']]
+
+ax.boxplot(data_to_plot,tick_labels=['Lunch','Dinner'])
+ax.set_ylabel('Tip ($)')
+ax.set_title('Tip Distribution by Time of Day')
+plt.savefig('../graphs/tip_at_dinner&lunch.png')
+plt.show()
+
+# Number of customers by day and time
+
