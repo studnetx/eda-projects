@@ -3,8 +3,8 @@ import pandas as pd  # Data manipulation ki maa
 import matplotlib.pyplot as plt  # Basic plotting ka dada
 import seaborn as sns  # Beautiful plots ka chacha
 import warnings
-warnings.filterwarnings('ignore')  
 # Choti moti warnings ko ignore 
+warnings.filterwarnings('ignore')  
 
 df=pd.read_csv("/kaggle/input/datasets/stuentx/titanic-data-set/train.csv")
 print('='*79)
