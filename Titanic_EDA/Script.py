@@ -80,3 +80,29 @@ ax[1,1].set_xlabel('Unique Values Count')
 plt.tight_layout()
 plt.show()
 
+
+#Distribution
+print('='*79)
+print("Distribution of Numerical columns")
+print('='*79)
+df[['Age', 'Fare']].describe().T
+
+
+print('='*79)
+print("Distribution of categorical columns")
+print('='*79)
+fig , ax =plt.subplots(3,2,figsize=(10,10))
+ax=np.ravel(ax)
+cat_col= [ col for col in cat_vars if col not in ['Name', 'Ticket', 'Cabin']]
+for i,col in enumerate(cat_col):
+    counts=df[col].value_counts()
+    ax[i].bar(counts.index.astype(str),df[col].value_counts().values)
+    ax[i].set_xlabel(f"{col}")
+    ax[i].set_ylabel(f"Counts")
+    ax[i].set_xticks(range(len(counts.index)))
+    ax[i].set_xticklabels(counts.index)
+    # print(df[col].value_counts().to_string())
+    # print('-'*30)
+plt.tight_layout()
+plt.show()
+
