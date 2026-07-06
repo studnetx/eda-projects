@@ -6,6 +6,7 @@
 
   ## 📊 Data
 - **Source:** Kaggle
+  
 - **Rows:**  890
 - **Columns:** 12
 - **Target:** who has more survival rate?
